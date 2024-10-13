@@ -1,0 +1,18 @@
+sudo docker build . -t personal-site
+sudo docker kill personal-site
+sudo docker remove personal-site
+sudo docker run -d -p 8000:8000 --name personal-site personal-site
+
+sudo docker compose --env-file docker.env up --build -s
+
+sudo docker build . -t --name foundry foundry
+sudo docker run -d -p 30000:30000 foundry
+https://github.com/felddy/foundryvtt-docker
+
+sudo docker run \
+  --env FOUNDRY_RELEASE_URL='<release-url>' \
+  --publish 30000:30000/tcp \
+  --volume UserData:/data \
+  --name foundry \
+  -d \
+  felddy/foundryvtt:release

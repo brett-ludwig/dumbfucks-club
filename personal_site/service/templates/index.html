@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dumbfucks Club</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', path='assets/css/main.css') }}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					<li><a href="#top">Top</a></li>
+					<li><a href="#portfolio">Portfolio</a></li>
+				</ul>
+			</nav>
+
+		<!-- Home -->
+			<article id="top" class="wrapper style1">
+				<div class="container">
+					<div class="row">
+						<div class="col-8 col-7-large col-12-medium">
+							<header>
+								<h1>&#129302 Hello :)</h1>
+							</header>
+							<p>Here are some things I've made and sometimes explanations of how to make them yourself</p>
+						</div>
+					</div>
+				</div>
+			</article>
+
+		<!-- Portfolio -->
+			<article id="portfolio" class="wrapper style3">
+				<div class="container">
+					<header>
+						<h2>Here’s some stuff I made recently.</h2>
+					</header>
+					<div class="row">
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="/this-website" class="image featured"><img src="{{ url_for('static', path='images/pic01.jpg') }}" /></a>
+								<h3><a href="/this-website">This Website</a></h3>
+								<p>Read about the how you can host your own website</p>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="/squash-the-creeps" class="image featured"><img src="{{ url_for('static', path='images/pic02.jpg') }}" /></a>
+								<h3><a href="/squash-the-creeps">Demo HTML Game</a></h3>
+								<p>Practice deploying godot games to HTML5</p>
+							</article>
+						</div>
+				</div>
+			</article>
+
+		<!-- Contact -->
+			<article id="contact" class="wrapper style4">
+					<footer>
+						<ul id="copyright">
+							<li>&copy; Brett Ludwig. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+			</article>
+
+		<!-- Scripts -->
+		
+			<script src="{{ url_for('static', path='assets/js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', path='assets/js/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ url_for('static', path='assets/js/browser.min.js') }}"></script>
+			<script src="{{ url_for('static', path='assets/js/breakpoints.min.js') }}"></script>
+			<script src="{{ url_for('static', path='assets/js/util.js') }}"></script>
+			<script src="{{ url_for('static', path='assets/js/main.js') }}"></script>
+
+	</body>
+</html>

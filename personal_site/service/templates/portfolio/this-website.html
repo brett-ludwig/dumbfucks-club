@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>About this Website</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for("static", path='assets/css/main.css') }}" />
+		<link rel="stylesheet" href="{{ url_for("static", path='this-website/this-website.css') }}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					<li><a href="/">Home</a></li>
+				</ul>
+			</nav>
+
+		<!-- Home -->
+			<article id="top" class="wrapper style1">
+        <div class="container">
+          <nav class = "centered">
+							<h3>Table of Contents</h3>
+							<ol>
+									<li><a href="#intro">Intro</a></li>
+									<li><a href="#architecture">Architecture</a></li>
+									<li><a href="#cost">Cost</a></li>
+									<li><a href="#dns-setup">Connecting your server to a real URL</a></li>
+									<li><a href="#conclusion">Conclusion</a></li>
+							</ol>
+          </nav>
+          
+          
+          <div id="intro">
+            <h3>Intro</h3>
+            <p>							
+              I think everyone should have a personal website. Do you remember geocities? Geocities was awesome, no instagram aesthetic could match the raw creative energy of people messing with html and css.
+							<figure  class="centered" >
+								<img src="{{ url_for("static", path='this-website/geocities.jpg') }}" alt="" />
+								<figcaption id="centered">I wish I could make a website look half this good</figcaption>
+							</figure>
+              
+              Anyway for most people using <a href="https://carrd.co/">carrd</a> or <a href="https://pages.github.com/">github pages</a> is your ideal solution. You know, modern geocities. <br>
+							However, if you want a custom url and full control of your backend then you'll find the rest of this page useful.
+            </p>
+          </div>
+					
+					<h3>Design</h3>
+					<div class="embedded">
+						<div id="architecture">
+							<img src="{{ url_for("static", path='this-website/concept-architecture.png') }}" alt="" >
+							<p>
+								The goal architecture for this websites backend was something akin to this structure. The concept here is you have Load Balancer exposed to the internet that then 
+								talks to a more secure internal network where nothing actually accesses the open net.<br/>
+								This is nice for a few reasons. <br/>
+							</p>
+							<ul>
+								<li>Secure. Having a Load Balancer as the gateway for your network lets you keep your servers more secure</li>
+								<li>Scalable. You can easily add more projects to this backend</li>
+								<li>Versatile. Whether your backend service is a VM, Lambda Function, Kubernetes Cluester, or a plumbus this architecture can support it</li>
+							</ul>
+						</div>
+						
+						<div id="cost">
+							<h4>Cost &#129297</h4>
+							<p>
+								There's one problem with this. There is no way to do this for free. See, all 3 of the big cloud providers (AWS, GCP, Azure) provide free tiers. Some are only free
+								for 12-months, some are free for life. I encourage you to read through the quota in the free tier and maximize these before you pay anything to a cloud provider. However, 
+								key for the above setup, no one gives you a load balancer for free.<br>
+								 
+								So are we shit ouf of luck? No, we just have to work a little bit harder, and learn some basics about how web security works Yay! <br> <br>
+								 
+								Step one, we replace our load balancer with a vm that runs NGINX (We will get into what this is and how to set it up soon), which means our architecture looks like this now
+							</p>
+							<img src="{{ url_for("static", path='this-website/real-architecture.png') }}" alt="" />
+							<h5>Why is havimg a VM important?</h5>
+							<p>
+								To be fair, NGINX is the important part for fixing our missing load balancer issue. You could host it on anything, but most SASS solutions don't let you use custom dockerfile for cheap. For example,
+								in GCP's free tier you get a pretty good amount of access to app-engine, but this is only for standard containers. This means the containers have to be from a set of premade ones google provides. This 
+								is still nice for doing something like hosting a Flask/Node/SpringBoot application, but not NGINX.<br>
+								Using a vm allows for you to install docker in the vm and run a custom container with NGINX inside of it. You could also run NGINX directly on the VM, but I think thats bad practice.
+							</p>
+						</div>
+					</div>
+        
+                  
+        
+
+					<div id="dns-setup">
+						<h3>DNS Setup</h3>
+						<p>
+							Great, we have a website up (at the very least nginx proxy manager on port 81), but my only way to access is the external ip address, how do I get a real url? <br>
+							First things first, buy a url. I recommend using Namecheap for this. You might notice that .com URLs are expensive, hence why this is a .club lol. There are plenty of fun TLD (Top Level Domains),
+							but I wouldn't go too crazy. Ultimately someone still runs that TLD so maybe buying a .cum url is funny, but how much do you trust that guy? Objectively me owning a .club url is probably dumb (look
+							at this sketchy ass wikipedia page lol https://en.wikipedia.org/wiki/.club). Realistically you're fine, but try to stick to some of the more well known cheap TLD like .xyz, .gg, etc. If you can snag
+							a .com or .net for cheap because your url is cheap than awesome!<br>
+							One last point on this topic, name cheap has an ai url generator and its terrible in a great way. 10/10 you should have fun with it https://www.namecheap.com/domains/domain-name-generator/ <br>
+							Anyway, you bought a url. Great. Fantastic. Now what? Well you need to setup the DNS. In name cheap you can use the "Advanced DNS" to set this up. Point an A record to your NGINX servers external IP
+							address and then make a CNAME for any subdomains ( subdomain.url.com, the most common is www obviously. You can lookup other standard subdomains if you're interested in the topic )
+							
+							Even with just the @ record setup you can now go to your-custom-url.com:81 and setup the nginx proxu manager
+						</p>
+					</div>
+					
+					<a href="https://nginx.org/en/">nginx</a>, a reverse proxy. <br>
+					We assign the free external ip address GCP allows to the free tier vm. On this vm setup Nginx. I recommend using open source software <a href="https://github.com/NginxProxyManager/nginx-proxy-manager">Nginx Proxy Manager</a>
+					This supplies a ui to simplify setup for beginners and has a built in connection to letsencrpyt to set you up with SSL (and therefore HTTPS) with a button click! I recommend a custom nginx setup if you're willing, but 
+					proxy manager makes the task more approachable and I use it myself for now because I'm lazy :).
+
+					<div id="conclusion">
+						<h3>Conclusion</h3>
+						<p>
+						Congratulations, you're setup with scalable cloud infrastructure for free now! Frankly at this point the world is your oyster. With the vm as your gateway to the internet you can <s>abuse</s> utilize
+						all of google free tier.
+						</p>
+						<ol>
+							<li>take advantage of the cloud function free tier</li>
+							<li>create a website with backend server using app service</li>
+							<li>connect your backend to some of the ai produce</li>
+							<li>use the firestore database</li>
+						</ol>
+						<p>
+						If you make something cool or see improvements I can make to this article/website please feel free to reach out!
+						</p>
+					</div>
+        </div>
+			</article>		
+
+	</body>
+</html>
