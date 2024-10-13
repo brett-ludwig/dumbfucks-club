@@ -201,5 +201,5 @@ cython_debug/
 
 
 **/bookstack_*
-**/.terraform 
-**/doker.env
+**/.terraform.lock.hcl
+**/docker.env
