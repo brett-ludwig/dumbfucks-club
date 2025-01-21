@@ -4,6 +4,7 @@ COPY . .
 RUN apt-get install
 RUN pip install fastapi[standard]
 RUN pip install starlette
+RUN pip install requests
 RUN pip install uvicorn
 
 
