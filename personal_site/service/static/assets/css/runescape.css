@@ -1,8 +1,29 @@
+.container {
+    margin: auto;
+    width: 80%;
+}
+
+.container img {
+    margin: auto;
+    height: 15vh;
+    display: block;
+    margin-top: 10vh;
+}
+
 .players {
     display: flex;
     flex-direction: row;
     align-items: space-between;
     justify-content: space-evenly;
+
+    background-color: #cac1c1;
+    width: 80%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 5vh;
+    background-image: url("../../images/stone-texture.png");
+    background-size: cover;
+
 }
 
 .stat-block {
@@ -11,17 +32,103 @@
     border-collapse: collapse;
 }
 
+caption {
+    font-size: x-large;
+}
+
 td, th {
     text-align: center;
     border: 0px solid black;
 }
 
 th {
-    background-color: #04AA6D;
+    background-color: #7a2402;
     color: white;
     padding: 10px;
   }
 
+tr {
+    background-color: #cccccc;
+}
+
 tr:nth-child(even) {
     background-color: #e9e9e9;
 } 
+
+body {
+    background-image: url("../../images/runescape-website-background.png");
+    background-color: #cccccc;
+    background-size: cover;
+}
+
+/* Nav */
+
+#nav {
+    background-color: #282828;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    cursor: default;
+    height: 3.5em;
+    line-height: 3.5em;
+
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+#nav ul {
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+#nav li {
+    display: inline-block;
+    padding-left: 0;
+}
+
+#nav a {
+    -moz-transition: background-color .2s ease-in-out;
+    -webkit-transition: background-color .2s ease-in-out;
+    -ms-transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+    position: relative;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    font-weight: 600;
+    border-radius: 8px;
+    color: #fff;
+    height: 2.5em;
+    line-height: 2.5em;
+    padding: 0 1.25em;
+}
+
+#nav a:hover {
+    color: #fff !important;
+    background: #383838;
+}
+
+#nav a.active {
+    background: #484848;
+}
+
+#nav a.active:before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -0.6em;
+    left: 50%;
+    margin-left: -0.75em;
+    border-left: solid 0.75em transparent;
+    border-right: solid 0.75em transparent;
+    border-top: solid 0.6em #282828;
+}

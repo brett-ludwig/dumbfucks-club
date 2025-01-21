@@ -13,8 +13,19 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{{ url_for("static", path='assets/css/runescape.css') }}" />
+
 	</head>
 	<body class="is-preload">
+        <nav id="nav">
+            <ul class="container">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <img src="{{ url_for('static', path='images/osrs-logo.png') }}" alt="">
+        </div>
+
         <div class="players">
             {{ osrsStatBlock(stats, SchnozmoBTW, "SchnozmoBTW") }}
             {{ osrsStatBlock(stats, ChetJubetcha, "ChetJubetcha") }}
