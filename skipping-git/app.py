@@ -7,25 +7,16 @@ from collections import OrderedDict
 
 from fastapi import FastAPI, Request, Response
 from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint
-import requests
+
 
 
 origins = [
-    "http://www.dumbfucks.club",
-    "https://unpkg.com",
-    "https://a.tile.openstreetmap.org",
-    "https://b.tile.openstreetmap.org",
-    "https://c.tile.openstreetmap.org"
-
+    "http://www.dumbfucks.club"
 ]
 CSP: dict[str, str | list[str]] = {
     "default-src": "'self'",
     "img-src": [
-        "https://www.dumbfucks.club",
-        "https://unpkg.com",
-        "https://a.tile.openstreetmap.org",
-        "https://b.tile.openstreetmap.org",
-        "https://c.tile.openstreetmap.org"
+        "https://www.dumbfucks.club"
     ],
     "script-src": [
         "'wasm-unsafe-eval'",
@@ -35,12 +26,10 @@ CSP: dict[str, str | list[str]] = {
         "https://www.dumbfucks.club"
     ],
     "script-src-elem": [
-        "https://www.dumbfucks.club",
-        "https://unpkg.com"
+        "https://www.dumbfucks.club"
     ],
-    "style-src-elem": [
-        "https://www.dumbfucks.club",
-        "https://unpkg.com"
+    "script-src-elem": [
+        "https://www.dumbfucks.club"
     ],
 }
 
@@ -96,7 +85,6 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         :param call_next: Function to process the request
         :return: Return response coming from from processed request
         """
-        godot_paths = ["/dnd"]
         headers = {
             "Content-Security-Policy": "" if not self.csp else self.parse_policy(CSP),
             "Cross-Origin-Opener-Policy": "same-origin",
@@ -108,8 +96,7 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
             "X-XSS-Protection": "1; mode=block",
         }
         response = await call_next(request)
-        if(request.url.path in godot_paths):
-            response.headers.update(headers)
+        response.headers.update(headers)
 
         return response
 
@@ -120,11 +107,11 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"]
 )
-#app.add_middleware(SecurityHeadersMiddleware, csp=True)
+app.add_middleware(SecurityHeadersMiddleware, csp=True)
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
@@ -135,17 +122,9 @@ async def squash_the_creeps(request: Request):
     return templates.TemplateResponse("portfolio/squash-the-creeps.html", {"request": request} )
     
 @app.get("/this-website", response_class=HTMLResponse)
-async def this_website(request: Request):
+async def squash_the_creeps(request: Request):
     return templates.TemplateResponse("portfolio/this-website.html", {"request": request} )
 
 @app.get("/dnd", response_class=HTMLResponse)
 async def dnd(request: Request):
     return templates.TemplateResponse("portfolio/dnd.html", {"request": request} )
-
-@app.get("/leaflet", response_class=HTMLResponse)
-async def leaflet(request: Request):
-    ip_addr = request.client.host
-    location_data = requests.get("http://ip-api.com/json/73.245.245.28").json()
-    lat = location_data['lat']
-    lon = location_data['lon']
-    return templates.TemplateResponse("portfolio/leaflet.html", {"request": request, "lat": lat, "lon": lon} )

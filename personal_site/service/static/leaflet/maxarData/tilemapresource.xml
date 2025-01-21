@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <TileMap version="1.0.0" tilemapservice="http://tms.osgeo.org/1.0.0">
+      <Title>22MAR22095810-S2AS-050012575010_01_P001.TIF</Title>
+      <Abstract></Abstract>
+      <SRS>PROJCS["WGS 84 / UTM zone 33N",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",15],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","32633"]]</SRS>
+      <BoundingBox minx="290614.71878400002606" miny="4639626.91146400012076" maxx="293231.61878400004935" maxy="4641838.21146399993449"/>
+      <Origin x="290614.71878400002606" y="4639626.91146400012076"/>
+      <TileFormat width="256" height="256" mime-type="image/png" extension="png"/>
+      <TileSets profile="raster">
+        <TileSet href="0" units-per-pixel="19.20000000000000" order="0"/>
+        <TileSet href="1" units-per-pixel="9.60000000000000" order="1"/>
+        <TileSet href="2" units-per-pixel="4.80000000000000" order="2"/>
+        <TileSet href="3" units-per-pixel="2.40000000000000" order="3"/>
+        <TileSet href="4" units-per-pixel="1.20000000000000" order="4"/>
+        <TileSet href="5" units-per-pixel="0.60000000000000" order="5"/>
+        <TileSet href="6" units-per-pixel="0.30000000000000" order="6"/>
+        <TileSet href="7" units-per-pixel="0.15000000000000" order="7"/>
+        <TileSet href="8" units-per-pixel="0.07500000000000" order="8"/>
+        <TileSet href="9" units-per-pixel="0.03750000000000" order="9"/>
+        <TileSet href="10" units-per-pixel="0.01875000000000" order="10"/>
+      </TileSets>
+    </TileMap>
+    

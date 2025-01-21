@@ -1,0 +1,27 @@
+{% macro tutorialPlugin(name, link, tutorialLink, description) -%}
+    <div class="card col-3 col-6-medium col-12-small">
+        <button class="collapsible"><h4 class="marginless">{{name}}</h4></button>
+        <div class="content">
+            <a class ="button" href="{{link}}">
+                Documentation
+            </a>
+            <a class="button" href="{{tutorialLink}}">
+                Tutorial
+            </a>
+            <p>{{description}}</p>
+        </div>
+    </div>
+{%- endmacro %}
+
+{% macro plugin(name, link, description) -%}
+    <div class="card col-3 col-6-medium col-12-small">
+        <button class="collapsible"><h4 class="marginless"><a href="{{link}}">{{name}}</a></h4></button>
+        <div class="content">
+            <a class ="button" href="{{link}}">
+                Documentation
+            </a>
+            <a class="button"><s>Tutorial N/A</s></a>
+            <p>{{description}}</p>
+        </div>
+    </div>
+{%- endmacro %}

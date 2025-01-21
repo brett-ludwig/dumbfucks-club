@@ -1,0 +1,69 @@
+<VRTDataset rasterXSize="17446" rasterYSize="14742">
+  <SRS dataAxisToSRSAxisMapping="2,1">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</SRS>
+  <GeoTransform>  2.9061471899999998e+05,  1.5000000000000133e-01,  0.0000000000000000e+00,  4.6418382110000001e+06,  0.0000000000000000e+00, -1.4999999999998737e-01</GeoTransform>
+  <Metadata>
+    <MDI key="AREA_OR_POINT">Area</MDI>
+  </Metadata>
+  <Metadata domain="IMAGE_STRUCTURE">
+    <MDI key="INTERLEAVE">BAND</MDI>
+    <MDI key="COMPRESSION">DEFLATE</MDI>
+  </Metadata>
+  <Metadata domain="RPC">
+    <MDI key="ERR_BIAS">1.66</MDI>
+    <MDI key="ERR_RAND">0.16</MDI>
+    <MDI key="HEIGHT_OFF">94</MDI>
+    <MDI key="HEIGHT_SCALE">400</MDI>
+    <MDI key="LAT_OFF">41.8911</MDI>
+    <MDI key="LAT_SCALE">0.0103</MDI>
+    <MDI key="LINE_DEN_COEFF">+1.000000E+00 -3.662105E-05 +2.362641E-03 +0.000000E+00 -1.763743E-07 +0.000000E+00 +0.000000E+00 +9.659962E-08 +5.582163E-06 -4.529075E-08 +0.000000E+00 +0.000000E+00 +0.000000E+00 +0.000000E+00 +0.000000E+00 +0.000000E+00 +0.000000E+00 +0.000000E+00 +0.000000E+00 +0.000000E+00</MDI>
+    <MDI key="LINE_NUM_COEFF">+4.779018E-03 +3.555609E-02 -1.034399E+00 +0.000000E+00 +1.232888E-04 +0.000000E+00 +0.000000E+00 -1.162991E-04 -2.444667E-03 -2.083010E-12 +0.000000E+00 +0.000000E+00 +3.819375E-07 +0.000000E+00 -3.824002E-07 -5.775764E-06 +4.684910E-08 +0.000000E+00 +0.000000E+00 +0.000000E+00</MDI>
+    <MDI key="LINE_OFF">7369</MDI>
+    <MDI key="LINE_SCALE">7371</MDI>
+    <MDI key="LONG_OFF">12.4918</MDI>
+    <MDI key="LONG_SCALE">0.0162</MDI>
+    <MDI key="SAMP_DEN_COEFF">+1.000000E+00 +2.847922E-03 +1.170697E-04 +0.000000E+00 +2.046307E-07 +0.000000E+00 +0.000000E+00 +8.069854E-06 +3.151640E-08 +0.000000E+00 +0.000000E+00 -5.360954E-08 +0.000000E+00 +0.000000E+00 +0.000000E+00 +0.000000E+00 +0.000000E+00 +0.000000E+00 +0.000000E+00 +0.000000E+00</MDI>
+    <MDI key="SAMP_NUM_COEFF">-5.651867E-03 +1.027059E+00 +2.556172E-02 +0.000000E+00 +2.768451E-05 +0.000000E+00 +0.000000E+00 +2.924217E-03 +5.572521E-06 +0.000000E+00 +0.000000E+00 +8.371445E-06 +0.000000E+00 +0.000000E+00 -4.590465E-08 +0.000000E+00 +0.000000E+00 +0.000000E+00 +0.000000E+00 +0.000000E+00</MDI>
+    <MDI key="SAMP_OFF">8723</MDI>
+    <MDI key="SAMP_SCALE">8724</MDI>
+  </Metadata>
+  <VRTRasterBand dataType="Byte" band="1" blockXSize="17446" blockYSize="1">
+    <ColorInterp>Red</ColorInterp>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Brett\Downloads\Rome_Colosseum_2022-03-22_WV03_HD\050012575010_01\050012575010_01_P001_PSH\22MAR22095810-S2AS-050012575010_01_P001.TIF</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="17446" RasterYSize="14742" DataType="Byte" BlockXSize="17446" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="17446" ySize="14742" />
+      <DstRect xOff="0" yOff="0" xSize="17446" ySize="14742" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Byte" band="2" blockXSize="17446" blockYSize="1">
+    <ColorInterp>Green</ColorInterp>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Brett\Downloads\Rome_Colosseum_2022-03-22_WV03_HD\050012575010_01\050012575010_01_P001_PSH\22MAR22095810-S2AS-050012575010_01_P001.TIF</SourceFilename>
+      <SourceBand>2</SourceBand>
+      <SourceProperties RasterXSize="17446" RasterYSize="14742" DataType="Byte" BlockXSize="17446" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="17446" ySize="14742" />
+      <DstRect xOff="0" yOff="0" xSize="17446" ySize="14742" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Byte" band="3" blockXSize="17446" blockYSize="1">
+    <ColorInterp>Blue</ColorInterp>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Brett\Downloads\Rome_Colosseum_2022-03-22_WV03_HD\050012575010_01\050012575010_01_P001_PSH\22MAR22095810-S2AS-050012575010_01_P001.TIF</SourceFilename>
+      <SourceBand>3</SourceBand>
+      <SourceProperties RasterXSize="17446" RasterYSize="14742" DataType="Byte" BlockXSize="17446" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="17446" ySize="14742" />
+      <DstRect xOff="0" yOff="0" xSize="17446" ySize="14742" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Byte" band="4" blockXSize="17446" blockYSize="1">
+    <ColorInterp>Alpha</ColorInterp>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">C:\Users\Brett\Downloads\Rome_Colosseum_2022-03-22_WV03_HD\050012575010_01\050012575010_01_P001_PSH\22MAR22095810-S2AS-050012575010_01_P001.TIF</SourceFilename>
+      <SourceBand>4</SourceBand>
+      <SourceProperties RasterXSize="17446" RasterYSize="14742" DataType="Byte" BlockXSize="17446" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="17446" ySize="14742" />
+      <DstRect xOff="0" yOff="0" xSize="17446" ySize="14742" />
+    </SimpleSource>
+  </VRTRasterBand>
+</VRTDataset>

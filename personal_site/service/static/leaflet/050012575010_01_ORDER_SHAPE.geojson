@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "orderDesc": "050012575010", "custOrd": null, "custOrdItm": "0", "datum": "WGS84", "projection": "UTM", "createDate": "2022-05-27T05:08:52.918696Z" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 12.476492, 41.900768 ], [ 12.507277, 41.900939 ], [ 12.507677, 41.88153 ], [ 12.476492, 41.881615 ], [ 12.476492, 41.900768 ] ] ] } }
+]
+}

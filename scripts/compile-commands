@@ -3,6 +3,11 @@ sudo docker kill personal-site
 sudo docker remove personal-site
 sudo docker run -d -p 8000:8000 --name personal-site personal-site
 
+docker build . -t personal-site
+docker kill personal-site
+docker remove personal-site
+docker run -d -p 8000:8000 --name personal-site personal-site
+
 sudo docker compose --env-file docker.env up --build -s
 
 sudo docker build . -t --name foundry foundry
@@ -16,3 +21,9 @@ sudo docker run \
   --name foundry \
   -d \
   felddy/foundryvtt:release
+
+gcloud compute scp --recurse bookstack-vm:/home/Brett/personal-site/templates/portfolio/ ./ports/
+
+CMD ["uvicorn", "app:app", "--reload", "--port", "8000", "--host", "0.0.0.0", "--proxy-headers", "--forwarded-allow-ips", "10.0.1.2"]
+
+uvicorn app:app --reload --port 8000 --host 0.0.0.0 --proxy-headers --forwarded-allow-ips localhost

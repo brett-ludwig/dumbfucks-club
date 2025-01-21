@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>About this Website</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for("static", path='assets/css/main.css') }}" />
+		<link rel="stylesheet" href="{{ url_for("static", path='leaflet/leaflet.css') }}" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+			<nav id="nav">
+                <ul class="container">
+					<li><a href="/">Home</a></li>
+				</ul>
+			</nav>
+
+		<!-- Home -->
+			<article id="top" class="wrapper style1">
+				<div id="map"></div>
+			</article>		
+
+            <div class="invisible" id="lat">{{lat}}</div>
+            <div class="invisible" id="lon">{{lon}}</div>
+
+	</body>
+   
+
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-ajax/dist/leaflet.ajax.min.js"></script> <!-- For loading GeoJSON -->
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+
+    <script src="{{ url_for('static', path='leaflet/leaflet.js') }}"></script>
+
+    </html>

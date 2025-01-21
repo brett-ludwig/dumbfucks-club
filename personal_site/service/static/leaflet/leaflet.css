@@ -1,0 +1,9 @@
+#map { 
+    height: 440px;
+    width: 80%;
+    display: block;
+    margin: auto;
+
+}
+
+.invisible { visibility: hidden; display: none;}
