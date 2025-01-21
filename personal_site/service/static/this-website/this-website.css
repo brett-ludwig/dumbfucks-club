@@ -4,6 +4,12 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+figure {
+  max-width: 100%;
+  height: auto;
+}
+
 div {
   color: black;
 }
@@ -31,6 +37,19 @@ figcaption {
   font-size: .75em;
 }
 
-ol li {
+nav ol li {
     list-style-type: none;
+}
+
+.tabbed {
+  padding-left: 2em;
+}
+
+.small {
+  width: 60%;
+  height: auto;
+}
+
+.pad-bot {
+  padding-bottom: 2em;
 }

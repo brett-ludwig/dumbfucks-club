@@ -1,0 +1,27 @@
+.players {
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: space-evenly;
+}
+
+.stat-block {
+    width: 20%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td, th {
+    text-align: center;
+    border: 0px solid black;
+}
+
+th {
+    background-color: #04AA6D;
+    color: white;
+    padding: 10px;
+  }
+
+tr:nth-child(even) {
+    background-color: #e9e9e9;
+} 

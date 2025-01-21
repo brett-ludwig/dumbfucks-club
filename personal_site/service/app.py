@@ -7,6 +7,7 @@ from collections import OrderedDict
 
 from fastapi import FastAPI, Request, Response
 from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint
+import requests
 
 
 
@@ -113,6 +114,9 @@ app.add_middleware(
 )
 app.add_middleware(SecurityHeadersMiddleware, csp=True)
 
+stats = ["attack", "defence", "strength", "hitpoints", "ranged", "prayer", "magic", "cooking", "woodcutting", "fletching", "fishing", "firemaking", "crafting", "smithing", "mining", "herblore", "agility", "thieving", "slayer", "farming", "runecrafting", "hunter", "construction"]
+
+
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request} )
@@ -124,3 +128,34 @@ async def squash_the_creeps(request: Request):
 @app.get("/this-website", response_class=HTMLResponse)
 async def squash_the_creeps(request: Request):
     return templates.TemplateResponse("portfolio/this-website.html", {"request": request} )
+
+@app.get("/dnd", response_class=HTMLResponse)
+async def dnd(request: Request):
+    return templates.TemplateResponse("portfolio/dnd.html", {"request": request} )
+
+def getCurrentOsrsStats(playerName:str):
+    response = requests.get(f"https://api.wiseoldman.net/v2/players/{playerName}")
+    playerData = response.json()
+    playerStats = {}
+    for stat in stats:
+        playerStats[stat] =  playerData["latestSnapshot"]["data"]["skills"][stat] #[stat]["level"]
+    
+    return playerStats
+
+def updatePlayer(playerName:str):
+    response = requests.post(f"https://api.wiseoldman.net/v2/players/{playerName}")
+    print(response)
+    print(response.text)
+
+@app.get("/runescape", response_class=HTMLResponse)
+async def runescape(request: Request):
+   # updatePlayer("SchnozmoBTW")
+    updatePlayer("ChetJubetcha")
+    #updatePlayer("Pamela Wett")
+    updatePlayer("TrixieTng")
+    SchnozmoBTW = getCurrentOsrsStats("SchnozmoBTW")
+    ChetJubetcha = getCurrentOsrsStats("ChetJubetcha")
+    PamelaWett = getCurrentOsrsStats("Pamela Wett")
+    TrixieTng = getCurrentOsrsStats("TrixieTng")
+
+    return templates.TemplateResponse("portfolio/runescape.html", {"request": request, "SchnozmoBTW": SchnozmoBTW, "ChetJubetcha":ChetJubetcha, "PamelaWett":PamelaWett, "TrixieTng":TrixieTng, "stats": stats})

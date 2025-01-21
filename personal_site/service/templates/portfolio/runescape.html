@@ -1,0 +1,27 @@
+{% from 'portfolio/macros.html' import osrsStatBlock %}
+
+
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>DnD Landing Page</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for("static", path='assets/css/runescape.css') }}" />
+	</head>
+	<body class="is-preload">
+        <div class="players">
+            {{ osrsStatBlock(stats, SchnozmoBTW, "SchnozmoBTW") }}
+            {{ osrsStatBlock(stats, ChetJubetcha, "ChetJubetcha") }}
+            {{ osrsStatBlock(stats, PamelaWett, "PamelaWett") }}
+            {{ osrsStatBlock(stats, TrixieTng, "TrixieTng") }}
+        </div>
+    </body>
+</html>
+    
+    

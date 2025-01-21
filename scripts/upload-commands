@@ -1,0 +1,6 @@
+gcloud compute scp <file> bookstack-vm:
+gcloud compute --recurse scp <directory>/ bookstack-vm:<director>
+
+gcloud storage cp 
+
+gcloud compute scp --recurse service/ bookstack-vm:personal-site
