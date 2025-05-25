@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Squash the Creeps</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for("static", path='assets/css/main.css') }}" />
+		<link rel="stylesheet" href="{{ url_for("static", path='assets/css/squash_the_creeps.css') }}" />		
+	</head>
+	<body>
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					<li><a href="/">Home</a></li>
+				</ul>
+			</nav>
+			
+			<div id="status">
+				<img id="status-splash" src="{{ url_for("static", path='squash_the_creeps/squash-the-creeps.png') }}" alt="">
+				<progress id="status-progress"></progress>
+				<div id="status-notice"></div>
+			</div>
+      				
+			<canvas id="canvas"></canvas>
+			<noscript>
+				Your browser does not support JavaScript.
+			</noscript>
+	
+			<article id="top" class="wrapper style1">
+				<div class="container">
+					<h3>About this content</h3>
+					<p>
+						This page is was an exploration in making a custom landing page for exported games from the GODOT game engine. I like to tinker with game dev and this way I can make things accessible to friends
+						without requiring a download and the headache of compiling for multiple systems. Tha game itself is just a standard 3d tutorial you can find on Godot's website.
+					</p>
+				</div>
+			</article>
+
+			
+		
+			
+			<!-- Scripts -->
+      <script src="{{ url_for("static", path='squash_the_creeps/squash-the-creeps.js') }}"></script>
+			<script src="{{ url_for("static", path='assets/js/squash_the_creeps_init.js') }}"></script>
+
+    </body>
+</html>

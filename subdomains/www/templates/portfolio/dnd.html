@@ -1,0 +1,101 @@
+{% from 'portfolio/macros.html' import tutorialPlugin, plugin %}
+
+
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>DnD Landing Page</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for("static", path='assets/css/main.css') }}" />
+		<link rel="stylesheet" href="{{ url_for("static", path='dnd/dnd.css') }}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					<li><a href="/">Home</a></li>
+				</ul>
+			</nav>
+
+		<!-- Home -->
+			<article id="top" class="wrapper style1">
+				<figure  class="centered" >
+					<a href="https://dnd.dumbfucks.club/join"><img src="{{ url_for("static", path='dnd/dnd-logo.jpg') }}" alt="" /></a>
+					<figcaption id="centered">Click Here to go to Foundry Virtual Table Top</figcaption>
+				</figure>
+
+				<div class="container">
+					<h3>FoundryVTT</h3>
+					<p>I use foundry virtual table top to power dnd.dumbfucks.club. It is like https://roll20.net except you purchase access to the code. For $40 you can then freely
+						mod the javascript of the website yourself or download plugins from other developers. Only downside (which for people like me is arguably a feature) is you have
+						to self host this website.
+					</p>
+
+					<div class="container">
+						<header>
+							<h3>Making a Character Using Plutonium</h3>
+							<div>
+								Follow <a href="https://www.youtube.com/watch?v=APruz5ZUtk4">this video</a> but the general steps are... 
+								<div>
+									1. Set your initial Stats (I recommend standard array stats of 15, 14, 13, 12, 10, and 8) <br>
+									2. U  se th
+								</div>
+							</div>
+						</header>
+					</div>
+
+					<div class="container">
+						<header>
+							<h3>Plugins and How to Use Them</h4>
+						</header>
+						<div class="plugins">
+							{{ tutorialPlugin(	"Plutonium", 
+												"https://5etools.com", 
+												"https://5etools.com/plutonium.html", 
+												"Gives access to 5etools website to import all sorts of things") }}
+
+							{{ plugin(			"JB2A", 
+												"https://foundryvtt.com/packages/JB2A_DnD5e", 
+												"JB2A allows for animations and comes with a great set of free ones") }}
+
+							{{ tutorialPlugin(	"Automated Animations", 
+												"https://foundryvtt.com/packages/autoanimations", 
+												"https://github.com/otigon/automated-jb2a-animations?tab=readme-ov-file#tutorial-video-links", 
+												"Makes setting up animations on spells and items way easier") }}
+							{{ tutorialPlugin(	"Mook AI", 
+												"https://foundryvtt.com/packages/mookAI", 
+												"https://www.youtube.com/watch?v=JNUF89BEsQo", 
+												"Simpe AI. Great for weak monsters. <br> NOTE: If you want this mod please message me. The official repo is out of date and I had to edit it to get working") }}
+
+							{{ plugin(			"Monk's Token Bar", 
+												"https://foundryvtt.com/packages/monks-tokenbar", 
+												"Adds some experience nice elements for combat and UI that feels like a video game") }}
+
+							{{ plugin(			"Easy Target", 
+												"https://foundryvtt.com/packages/easy-target", 
+												"Alt Click Targetting") }}
+							{{ tutorialPlugin(	"DDB-Importer", 
+												"https://foundryvtt.com/packages/ddb-importer", 
+												"https://www.youtube.com/watch?v=OMaJHLQORWo",
+												"Import characters made on DnD Beyond") }}
+							{{ plugin(			"Midi-QOL",
+												"https://foundryvtt.com/packages/midi-qol",
+												"Auto rolls attacks and items for the most part as long as you have selected targets") }}
+						
+							{{ plugin(			"Monk's Scene Navigation", 
+												"https://foundryvtt.com/packages/monks-scene-navigation", 
+												"Folders for scenes") }}
+					</div>
+				</div>
+			</article>		
+			<script src="{{ url_for('static', path='dnd/dnd.js') }}"></script>
+	</body>
+</html>
+
