@@ -200,6 +200,8 @@ cython_debug/
 #.idea/
 
 
-**/bookstack_*
-**/.terraform.lock.hcl
-**/docker.env
+**/wiki/mysql/*
+**/.env
+**/wiki/config/*
+
+**/dnd/UserData/*

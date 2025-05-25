@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>About this Website</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for("static", path='assets/css/main.css') }}" />
+		<link rel="stylesheet" href="{{ url_for("static", path='this-website/this-website.css') }}" />
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="container">
+				<li><a href="/">Home</a></li>
+			</ul>
+		</nav>
+
+		<!-- Home -->
+		<article id="top" class="wrapper style1">
+			<div class="container">
+				<nav class = "centered">
+					<h3 class="collapsible">Table of Contents</h3>
+					<ol class="content">
+						<li><a href="#intro">Intro</a></li>
+						<li><a href="#url">Buying a Domain</a></li>
+						<li><a href="#hostingBackend">Hosting a Backend (for free?!)</a></li>
+					</ol>
+				</nav>
+			
+			
+				<div class="pad-bot" id="intro">
+					<h3>Intro</h3>
+					<div>							
+					I think everyone should have a personal website. Do you remember geocities? Geocities was awesome, no instagram aesthetic 
+					could match the raw creative energy of people messing with html and css.
+					<figure  class="centered" >
+						<img src="{{ url_for("static", path='this-website/geocities.jpg') }}" alt="" />
+						<figcaption id="centered">I wish I could make a website look half this good</figcaption>
+					</figure>
+					
+					There are a few options if you want some website builders (all are free or have free versions)
+					<ul>
+						<li><a href="https://carrd.co/">carrd</a></li>
+						<li><a href="https://neocities.org">Neocities</a></li>
+						<li><a href="https://pages.github.com/">github pages</a></li>
+					</ul>
+					However, if you want a to learn how to buy a url, setup SSL so you get https on your website, and how to route traffic to a backend of your 
+					choosing, keep reading!
+					</div>
+				</div>
+
+				<div class="pad-bot" id="url">
+					<h3>Buying a Domain</h3>
+					I use <a href="https://www.namecheap.com/">namecheap</a>. What can I say, I'm a victim of good branding. There are plenty of good options, but this tutorial is 
+					geared to namecheap. <br>
+					<h4 class="collapsible">How do I find a cheaper url?</h4>
+					<div class="content">
+						You might notice coolwebsite.com costs almost $20,000 and feel like you have not shot at buying a cool domain. Despair not, there are still choices.
+						You see if a domain is expensive that is because it is either already owned by someone or is considered "premium". You have two options.
+						<div class="tabbed">
+							1. pick a unique enough url that it won't be expensive <br>
+							2. take advantage of less common TLD 
+						</div>
+						TLD stands for Top Level Domain, its the ending of your url (.com, .net, .eu, .club, etc). There are a lot of TLDs and I won't get into full detail about them.
+						Here are some <a href="https://en.wikipedia.org/wiki/Generic_top-level_domain#Top_TLDs">popular ones</a>. Also take advantage of this fun 
+						<a href="https://www.namecheap.com/visual/business-name-generator/">AI url generator</a>.
+					</div>
+					<div>
+						Once you bought the url you need to setup the DNS, here is an example.
+						<img class="small" src="{{ url_for('static', path='this-website/dumbfuck-dns.png') }}">
+						Here you can see two types of records.
+						<div class="tabbed">
+							1. An "A Record" pointing to the IP address of the server <br>
+							2. CNAME pointing to the "A Record"
+						</div>
+						My setup is a little fancy, but for the most simple you just need a CNAME record for www and an A Record for the server. You may not have an ip address of a 
+						backend, lets talk about that next.
+					</div>
+				</div>
+
+				<div class="pad-bot" id="hostingBackend">
+					<h3>Hosing a Backend</h3>
+					<div>
+						coming soon :P
+					</div>
+				</div>
+			</div>		
+		</article>
+		<script src="{{ url_for('static', path='dnd/dnd.js') }}"></script>
+
+	</body>
+</html>
