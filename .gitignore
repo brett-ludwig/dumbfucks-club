@@ -203,5 +203,4 @@ cython_debug/
 **/wiki/mysql/*
 **/.env
 **/wiki/config/*
-
 **/dnd/UserData/*
