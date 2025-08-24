@@ -12,25 +12,31 @@ import requests
 
 
 origins = [
-    "http://www.dumbfucks.club"
+    "http://www.dumbfucks.club",
+    "http://redyard:50002",
 ]
 CSP: dict[str, str | list[str]] = {
     "default-src": "'self'",
     "img-src": [
-        "https://www.dumbfucks.club"
+        "https://www.dumbfucks.club",
+        "http://redyard:50002",
     ],
     "script-src": [
         "'wasm-unsafe-eval'",
-        "https://www.dumbfucks.club"
+        "https://www.dumbfucks.club",
+        "http://redyard:50002",
     ],
     "style-src": [
-        "https://www.dumbfucks.club"
+        "https://www.dumbfucks.club",
+        "http://redyard:50002",
     ],
     "script-src-elem": [
-        "https://www.dumbfucks.club"
+        "https://www.dumbfucks.club",
+        "http://redyard:50002",
     ],
     "script-src-elem": [
-        "https://www.dumbfucks.club"
+        "https://www.dumbfucks.club",
+        "http://redyard:50002",
     ],
 }
 
