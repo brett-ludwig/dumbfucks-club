@@ -204,3 +204,4 @@ cython_debug/
 **/.env
 **/wiki/config/*
 **/dnd/UserData/*
+**/www/local-testing/**/*

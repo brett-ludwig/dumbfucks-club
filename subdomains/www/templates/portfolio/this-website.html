@@ -1,9 +1,6 @@
+{% from 'macros/main_macros.html' import navbar  with context%}
+
 <!DOCTYPE HTML>
-<!--
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>About this Website</title>
@@ -15,85 +12,41 @@
 	</head>
 	<body class="is-preload">
 
-		<!-- Nav -->
-		<nav id="nav">
-			<ul class="container">
-				<li><a href="/">Home</a></li>
-			</ul>
-		</nav>
+		{{ navbar() }}
 
 		<!-- Home -->
-		<article id="top" class="wrapper style1">
-			<div class="container">
-				<nav class = "centered">
-					<h3 class="collapsible">Table of Contents</h3>
-					<ol class="content">
-						<li><a href="#intro">Intro</a></li>
-						<li><a href="#url">Buying a Domain</a></li>
-						<li><a href="#hostingBackend">Hosting a Backend (for free?!)</a></li>
-					</ol>
-				</nav>
-			
-			
-				<div class="pad-bot" id="intro">
-					<h3>Intro</h3>
-					<div>							
-					I think everyone should have a personal website. Do you remember geocities? Geocities was awesome, no instagram aesthetic 
-					could match the raw creative energy of people messing with html and css.
-					<figure  class="centered" >
-						<img src="{{ url_for("static", path='this-website/geocities.jpg') }}" alt="" />
-						<figcaption id="centered">I wish I could make a website look half this good</figcaption>
-					</figure>
+		<article class="top">
+			<div class="margin-container">
+				<div class="column-container centered-container">
+					<p>This website's architecture at its most basic is shown below</p>
+					<img class="full-width" src="{{ url_for("static", path='assets/img/website-arch-ez.png') }}" alt="" />
+					<div class="bordered three-quarters-width">
+						<p>
+							I self host because it is fun. 
+							<br>
+							Cloudflare protects my IP address and I get to save money on cloud hosting fees. In many use cases cloud is cheaper, but I have multiple docker containers for different subdomains. Add that to my desires to setup a database on the server and you can see how that would quickly become a pretty decent monthly bill for a website I host for fun.
+							<br><br>
+							This website runs on a python backend implemented with FastAPI. 
+							<br>I use FastAPI because it was quick to get up and running an not because its particularly well suited for this kind of website.
+							<br><br>
+							The front end is almost entirely pure HTML and CSS.
+							<br>I use HTMX and vanilla JS here and there for some fun effects, but by in large I find most JS frameworks bloated. Your website does not need state management 9 times out of 10.
+							<br><br>
+							I bought my domain through Namecheap.com, there are plenty of other options though.
+							<br><br>
+							
+							<a href="https://github.com/brett-ludwig/dumbfucks-club/tree/main">all code is publicly available on my github</a>
+						</p>
+					</div>
 					
-					There are a few options if you want some website builders (all are free or have free versions)
-					<ul>
-						<li><a href="https://carrd.co/">carrd</a></li>
-						<li><a href="https://neocities.org">Neocities</a></li>
-						<li><a href="https://pages.github.com/">github pages</a></li>
-					</ul>
-					However, if you want a to learn how to buy a url, setup SSL so you get https on your website, and how to route traffic to a backend of your 
-					choosing, keep reading!
-					</div>
 				</div>
+			</div>
+			
+			
 
-				<div class="pad-bot" id="url">
-					<h3>Buying a Domain</h3>
-					I use <a href="https://www.namecheap.com/">namecheap</a>. What can I say, I'm a victim of good branding. There are plenty of good options, but this tutorial is 
-					geared to namecheap. <br>
-					<h4 class="collapsible">How do I find a cheaper url?</h4>
-					<div class="content">
-						You might notice coolwebsite.com costs almost $20,000 and feel like you have not shot at buying a cool domain. Despair not, there are still choices.
-						You see if a domain is expensive that is because it is either already owned by someone or is considered "premium". You have two options.
-						<div class="tabbed">
-							1. pick a unique enough url that it won't be expensive <br>
-							2. take advantage of less common TLD 
-						</div>
-						TLD stands for Top Level Domain, its the ending of your url (.com, .net, .eu, .club, etc). There are a lot of TLDs and I won't get into full detail about them.
-						Here are some <a href="https://en.wikipedia.org/wiki/Generic_top-level_domain#Top_TLDs">popular ones</a>. Also take advantage of this fun 
-						<a href="https://www.namecheap.com/visual/business-name-generator/">AI url generator</a>.
-					</div>
-					<div>
-						Once you bought the url you need to setup the DNS, here is an example.
-						<img class="small" src="{{ url_for('static', path='this-website/dumbfuck-dns.png') }}">
-						Here you can see two types of records.
-						<div class="tabbed">
-							1. An "A Record" pointing to the IP address of the server <br>
-							2. CNAME pointing to the "A Record"
-						</div>
-						My setup is a little fancy, but for the most simple you just need a CNAME record for www and an A Record for the server. You may not have an ip address of a 
-						backend, lets talk about that next.
-					</div>
-				</div>
 
-				<div class="pad-bot" id="hostingBackend">
-					<h3>Hosing a Backend</h3>
-					<div>
-						coming soon :P
-					</div>
-				</div>
-			</div>		
 		</article>
-		<script src="{{ url_for('static', path='dnd/dnd.js') }}"></script>
+		
 
 	</body>
 </html>

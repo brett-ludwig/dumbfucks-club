@@ -1,0 +1,35 @@
+
+#cypress-animation {
+    height: auto;
+    width: 30dvw;
+}
+
+.image-featured > img {
+    width: 40dvw;
+    height: auto;
+}
+
+.card {
+    width: 60dvw;
+    height: auto;
+    margin: 1dvh 0;
+}
+
+@media (min-width: 1024px) {
+    #cypress-animation {
+        height: auto;
+        width: 10dvw;
+    }
+    
+    .image-featured > img {
+        width: 10dvw;
+        height: auto;
+    }
+    
+    .card {
+        width: 20dvw;
+        height: auto;
+        margin: 1dvh 0;
+    }
+
+}

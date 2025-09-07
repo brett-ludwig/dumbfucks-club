@@ -1,0 +1,126 @@
+{% from 'macros/main_macros.html' import navbar  with context%}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Dumbfucks Club</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', path='assets/css/main.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', path='assets/css/index.css') }}" />
+		<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.6/dist/htmx.min.js"
+		integrity="sha384-Akqfrbj/HpNVo8k11SXBb6TlBWmXXlYQrCSqEWmyKJe+hDm3Z/B2WVG4smwBkRVm"
+		crossorigin="anonymous"></script>
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+	</head>
+	<body class="is-preload">
+
+		{{ navbar() }}
+
+		<!-- Home -->
+		<article id="top">
+			<div class="margin-container">
+					<div class="centered-container">
+						<!-- animation handled by JS to save on htmx calls -->
+						<img title="Van Gogh's Cypresses" id="cypress-animation" src="{{ url_for('static', path='assets/img/Cypress_anim1.png') }}" alt="" hx-get="/cypress" hx-params="*"hx-swap="outerHTML"  keyframe="1" hx-target="this">
+						<div class="container column-container half-container">
+							<header>
+								<h1>&#129302 Hello :)</h1>
+							</header>
+							<div class="">
+								<p>Here are some things I've made and sometimes explanations of how to make them yourself</p>
+							</div>
+						</div>					
+				</div>
+			</div>
+		</article>
+
+		<!-- Actual Projects -->
+		<div class="container margin-container">
+			<div class="column-container full-width">
+				<section class="bordered mb-5">
+					<h2 class="centered-text">Actual Projects</h2>
+					<div class="container display-container">
+						<div class="card">
+							<article class="container">
+								<div class="container centered-container column-container">
+									<a href="/ai" class="image-featured"><img src="{{ url_for('static', path='assets/img/Flanette.png') }}" /></a>
+									<h3><a href="/ai">AI Tool</a></h3>
+									<p class="centered-text">A simple tool I use to interact with ollama locally</p>
+								</div>
+							</article>
+						</div>
+
+						<div class="card">
+							<article class="container">
+								<div class="container centered-container column-container">
+									<a href="/squash-the-creeps" class="image-featured"><img src="{{ url_for('static', path='assets/img/squash-the-creeps.png') }}" /></a>
+									<h3><a href="/squash-the-creeps">Demo HTML Game</a></h3>
+									<p class="centered-text">Practice deploying godot games to HTML5</p>
+								</div>
+							</article>
+						</div>
+						
+						<div class="card">
+							<article class="container">
+								<div class="container centered-container column-container">
+									<a href="/runescape" class="image-featured"><img src="{{ url_for('static', path='assets/img/runescape-website-background.png') }}" /></a>
+									<h3><a href="/runescape">OSRS Group Ironman</a></h3>
+									<p class="centered-text">Observe me and my friends waste our lives!</p>
+								</div>
+							</article>
+						</div>
+					</div>
+
+				</section>
+		
+				<!-- Write Ups and Blogs -->
+				<section class="bordered">
+					<h2 class="centered-text">Write Ups and Blogs</h2>
+					<div class="container display-container">
+						<div class="card">
+							<article class="container">
+								<div class="container centered-container column-container">
+									<a href="/css-opinions" class="image-featured"><img src="{{ url_for('static', path='assets/img/sodomy-punished.png') }}" /></a>
+									<h3><a href="/css-opinions">Why I don't use bootstrap for this website</a></h3>
+									<p class="centered-text">For those curious why I don't use bootstrap for my css</p>
+								</div>
+							</article>
+						</div>
+						<div class="card">
+							<article class="container">
+								<div class="container centered-container column-container">
+									<a href="/this-website" class="image-featured"><img src="{{ url_for('static', path='assets/img/Cosmographie-Universelle-Guillaume-Le-Testu.png') }}" /></a>
+									<h3><a href="/this-website">This Website</a></h3>
+									<p class="centered-text">Read about the how you can host your own website</p>
+								</div>
+							</article>
+						</div>
+						<div class="card">
+							<article class="container">
+								<div class="container centered-container column-container">
+									<a href="/dnd" class="image-featured"><img src="{{ url_for('static', path='assets/img/dnd-logo.jpg') }}" /></a>
+									<h3><a href="/dnd">DND Landing Page</a></h3>
+									<p class="centered-text">A Landing Page for Everything I do related to DnD</p>
+								</div>
+							</article>
+						</div>
+					</div>
+				</section>
+			</div>
+		 </div>
+
+
+		<!-- Contact -->
+		<section>
+			<footer>
+				<li>&copy; Brett Ludwig. All rights reserved.</li>
+			</footer>
+		</section>
+
+		<!-- Scripts -->
+		
+
+			<script src="{{ url_for("static", path='assets/js/index.js') }}"></script>
+
+	</body>
+</html>

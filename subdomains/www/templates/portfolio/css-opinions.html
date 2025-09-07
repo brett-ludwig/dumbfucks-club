@@ -1,0 +1,67 @@
+{% from 'macros/main_macros.html' import navbar  with context%}
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>About this Website</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for("static", path='assets/css/main.css') }}" />
+		<link rel="stylesheet" href="{{ url_for("static", path='this-website/this-website.css') }}" />
+
+	</head>
+	<body class="is-preload">
+
+		{{ navbar() }}
+
+		<!-- Home -->
+		<article class="top">
+			<div class="margin-container half-height">
+                <div class="bordered mb-5">
+                    <h1>What is bootstrap and why should I care you don't like it?</h1>
+                    <div class="grow">
+                    <p>
+                        As you might have seen in the <strong>this-website</strong> article, I don't use a JS framework for this website. I think its overkill for my use case.
+                        <br><br>
+                        HOWEVER, I still want the website to look nice so CSS is important. That is where (traditionally) something like bootstrap comes in.
+                        <br>
+                        While many frameworks let you integrate with bootstrap or use pre-compilers like SASS, I can't do that (or more accurately choose not to since frameworks are stinky). However, bootstrap predates these frameworks.
+                        Even back in the good old days you could just import boostrap's css and have access to tons of great pre-made css classes. So why not use it?
+                        <br><br>
+                        The answer is, it is too cookie cutter and it hinders learning.
+                        <br>
+                        Bootstrap overuse makes your websites look cookie cutter and forces a specific formatting in exchange for quicker CSS dev. To be fair, back in the day bootstrap was just better than raw CSS for responsive web dev.
+                        Most people didn't have the tools or know how to make website that looked good on mobile and desktop. Modern CSS kind of makes this not true. There have been tons of improvement in responsive elements and design philosophy.
+                        Media queries, improved flexboxes, etc
+                        <br><br>
+                        As for how it hinders learning, when you learn bootstrap you learn bootstrap, not CSS. CSS has tons of new features in the modern day that frankly, you'll never choose to use if you're in the bootstrap bubble.
+                    </p>
+                    </div>
+                </div>
+                <div class="bordered">
+                    <h1>What to do instead, write everything from scratch?</h1>
+                    <div class="grow">
+                    <p>
+                        Yes :)
+                        <br><br>
+                        Well at first at least. Writing it by hand will help you see why a component pattern like bootstrap is hindering. At first it can be nice, you establish a set of re-usable containers, maybe buttons too. However, as you make
+                        more pages you'll notice these component classes need to be edited in small ways to fit other pages styling (maybe different padding, margins, etc). To resolve this you'll start leveraging the Cascade part of css. Adding in classes
+                        that are basically wrappers around certain css attributes so you can quickly add details to elements without impacting global styling.
+                        <br><br>
+                        Once you get to this point, congratulations! You are officially re-creating <strong>Tailwind</strong>. Tailwind is what I will probably move to in the near future for my CSS. its like Bootstrap, but instead of giving you classes for completed and
+                        pre-formatted components, you instead have a series of classes that can be composed to style your HTML elements.
+                        <br><br>
+                        IMPORTANT: Tailwind will not make sense if you don't have experience with CSS. You need to be pretty familiar with CSS attributes to get the value from Tailwind.
+                    </p>
+                    </div>
+                </div>
+			</div>
+			
+			
+
+
+		</article>
+		
+
+	</body>
+</html>
