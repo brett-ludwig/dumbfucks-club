@@ -10,7 +10,7 @@ from ollama import GenerateResponse
 
 router = APIRouter()
 templates = Jinja2Templates(directory="templates")
-is_local = True
+is_local = False
 
 @router.post("/ai/send-message", response_class=HTMLResponse)
 async def sendMessage(request: Request):
