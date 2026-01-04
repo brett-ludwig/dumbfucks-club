@@ -1,0 +1,52 @@
+{% from 'macros/main_macros.html' import navbar, border_box_css, drop_shadow_css with context%}
+
+
+{% extends 'macros/base.html' %}
+
+	{% block title %}
+		Welcome to the Club
+	{% endblock %}
+
+	{% block head %}
+		{{ super() }}
+		<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.6/dist/htmx.min.js"
+			integrity="sha384-Akqfrbj/HpNVo8k11SXBb6TlBWmXXlYQrCSqEWmyKJe+hDm3Z/B2WVG4smwBkRVm"
+			crossorigin="anonymous"></script>
+	{% endblock %}
+
+
+
+	{% block content %}
+		<div class="flex flex-col ">
+			<!-- Home -->
+			<article id="top" class="max-w-2/3 mx-auto my-4 flex flex-col">
+				<!-- animation handled by JS to save on htmx calls -->
+					<div class="flex flex-row items-center justify-center">
+					<img title="Van Gogh's Cypresses" id="cypress-animation"  class="h-30 " src="{{ url_for('static', path='assets/img/Cypress_anim1.png') }}" alt="" hx-get="/cypress" hx-params="*"hx-swap="outerHTML"  keyframe="1" hx-target="this">
+					<h1 class="text-2xl pb-4">&#129302 Hello :)</h1>
+					</div>
+				<p>Here are some things I've made and sometimes explanations of how to make them yourself</p>
+			</article>
+
+			<!-- Actual Projects -->
+			<div class="py-4">
+				<section class="bordered mb-5">
+					<h2 class="text-center text-2xl mb-8">The Things I've Made</h2>
+					<div class="grid md:grid-cols-3 gap-3 ">
+
+						{% for project in projects %}
+						<a href="{{project.route_base}}" >
+							<article class="flex flex-col items-center h-full justify-center {{drop_shadow_css()}} p-2 hover:bg-sky-100">
+								<h3 class="">{{project.name}}</h3>
+								<img class="h-20" src="{{ url_for('static', path=project.icon_path) }}" />
+								<p class="text-center my-4">{{project.description}}</p>
+							</article>
+						</a>
+						{% endfor %}
+					</div>
+				</section>
+			</div>
+		</div>
+		<!-- Scripts -->
+		<script src="{{ url_for("static", path='assets/js/index.js') }}"></script>
+{% endblock %}

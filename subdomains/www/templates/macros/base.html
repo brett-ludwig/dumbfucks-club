@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% from 'macros/main_macros.html' import navbar with context%}
+<html lang="en">
+<head>
+<!--  blocks in this template are... head, title, content  !-->
+<title>{% block title %}{% endblock %}</title>
+{% block head %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <link href="{{ url_for('static', path='assets/css/tailwind.css') }}" rel="stylesheet">
+{% endblock %}
+</head>
+<body>
+
+    <div class="flex flex-col min-h-screen">
+        {{ navbar() }}
+        <main class="flex-grow mx-auto px-4 py-8 max-w-3xl">
+            {% block content %}
+            {% endblock %}
+        </main>
+        
+        <!-- Contact -->
+        <footer>
+            <li>&copy; Brett Ludwig. All rights reserved.</li>
+        </footer>
+    </div>
+</body>
+</html>

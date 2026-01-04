@@ -1,21 +1,15 @@
-{% from 'macros/main_macros.html' import navbar  with context%}
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Squash the Creeps</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{{ url_for("static", path='assets/css/main.css') }}" />
-		<link rel="stylesheet" href="{{ url_for("static", path='assets/css/squash_the_creeps.css') }}" />		
-	</head>
-	<body>
-
-		<!-- Nav -->
-		{{ navbar() }}
+{% from 'macros/main_macros.html' import navbar, border_box_css, drop_shadow_css with context%}
 
 
-		
-		
+{% extends 'macros/base.html' %}
+
+	{% block title %}
+		Godot Example Project
+	{% endblock %}
+
+
+
+	{% block content %}
 		<article id="top" class="wrapper style1">
 			<div class="container column-container outer-container bordered">
 				<h3>About this content</h3>
@@ -25,7 +19,7 @@
 				</p>
 			</div>
 		</article>
-
+	
 		<section>
 			<div class="container centered-container">
 				<div id="game-div">
@@ -42,10 +36,9 @@
 				
 			</div>					
 		</section>
-			
-			<!-- Scripts -->
-      	<script src="{{ url_for("static", path='assets/js/squash_the_creeps/squash-the-creeps.js') }}"></script>
-	  	<script src="{{ url_for("static", path='assets/js/squash_the_creeps_init.js') }}"></script>
-
-    </body>
-</html>
+	
+		
+		<!-- Scripts -->
+	  <script src="{{ url_for("static", path='assets/js/squash_the_creeps/squash-the-creeps.js') }}"></script>
+	  <script src="{{ url_for("static", path='assets/js/squash_the_creeps_init.js') }}"></script>
+  {% endblock %}

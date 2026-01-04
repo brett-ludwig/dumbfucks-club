@@ -1,0 +1,19 @@
+{% from 'macros/main_macros.html' import navbar, border_box_css, drop_shadow_css, plugin, tutorialPlugin with context%}
+
+
+{% extends 'macros/base.html' %}
+
+	{% block title %}
+		DnD!
+	{% endblock %}
+
+
+
+	{% block content %}
+		<!-- Home -->
+			<figure  class="centered" >
+				<a href="https://dnd.dumbfucks.club/join"><img src="{{ url_for("static", path='assets/img/dnd-logo.jpg') }}" alt="" /></a>
+				<figcaption id="centered">Click Here to go to Foundry Virtual Table Top</figcaption>
+			</figure>
+  {% endblock %}
+

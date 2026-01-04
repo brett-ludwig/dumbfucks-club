@@ -1,7 +1,7 @@
 {% macro navbar() %}
-  <nav id="navbar">
-    <div class="centered-container">
-      <a href="/" class="home-btn"><img src="{{ url_for('static', path='assets/img/Home_icon.png') }}" alt="Home"></a>
+  <nav id="navbar" class="block w-screen bg-slate-300">
+    <div class="w-4/5 p-2">
+      <a href="/"><img src="{{ url_for('static', path='assets/img/Home_icon.png') }}" alt="Home" class="h-15 object-scale-down"></a>
       <!-- <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -10,4 +10,17 @@
     </div>
   
   </nav>
+{% endmacro %}
+
+{% macro border_box_css() %}
+border rounded-md bg-gray-100
+{% endmacro %}
+
+{% macro code_box_css() %}
+border rounded-md bg-cobalt-200
+{% endmacro %}
+
+
+{% macro drop_shadow_css() %}
+rounded-xl shadow-lg outline outline-black/20
 {% endmacro %}

@@ -7,7 +7,7 @@ from collections import OrderedDict
 
 from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint
 import requests
-from app.routers import ai_router, writeup_router, runescape_router, squash_the_creeps_router
+from app.projects import ai_project, blog_project, squash_the_creeps_project, dnd_project
 
 
 
@@ -118,15 +118,17 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"]
 )
-app.add_middleware(SecurityHeadersMiddleware, csp=True)
-app.include_router(ai_router.router)
-app.include_router(writeup_router.router)
-app.include_router(runescape_router.router)
-app.include_router(squash_the_creeps_router.router)
 
+projects = [ blog_project.project, ai_project.project, squash_the_creeps_project.project, dnd_project.project]
+routers = [blog_project.router, ai_project.router, squash_the_creeps_project.router,  dnd_project.router]
+
+for router in routers:
+    app.include_router(router)
+
+app.add_middleware(SecurityHeadersMiddleware, csp=True)
 @app.get("/", response_class=HTMLResponse)
-async def home(request: Request):
-    return templates.TemplateResponse("index/index.html", {"request": request} )
+async def home(request: Request): 
+    return templates.TemplateResponse("index.html", {"request": request, "projects": projects} )
 
 @app.get("/cypress", response_class=HTMLResponse)
 async def cypress(request: Request, keyframe):
@@ -136,11 +138,9 @@ async def cypress(request: Request, keyframe):
 
     img_path = "assets/img/Cypress_anim%d.png" % keyframe
     print(img_path)
-    return templates.TemplateResponse("index/cypress_animation.html", {"request": request, "img_path":img_path, "keyframe":keyframe} )
+    return templates.TemplateResponse("htmx_partials/cypress_animation.html", {"request": request, "img_path":img_path, "keyframe":keyframe} )
 
     
 
-@app.get("/dnd", response_class=HTMLResponse)
-async def dnd(request: Request):
-    return templates.TemplateResponse("portfolio/dnd.html", {"request": request} )
+
 
