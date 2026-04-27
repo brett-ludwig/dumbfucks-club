@@ -1,2 +1,5 @@
 fastapi[standard]
 starlette
+requests
+uvicorn
+ollama

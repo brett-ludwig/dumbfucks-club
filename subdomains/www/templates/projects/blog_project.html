@@ -1,0 +1,20 @@
+{% from 'macros/main_macros.html' import navbar, border_box_css, drop_shadow_css with context%}
+
+
+{% extends 'macros/base.html' %}
+
+{% block content %}
+<h2 class="text-3xl font-bold mb-8 text-center">Blogs</h2>
+
+<div class="">
+  {% for blog in blogs %}
+    <div class="m-3">
+      <a href="/blogs/{{ blog.blog_id }}" class="block border {{ drop_shadow_css() }} rounded p-4 hover:bg-sky-100">
+        <h3 class="text-xl font-semibold mb-2">{{ blog.title }}</h3>
+        <p class="text-gray-600">{{ blog.description }}</p>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

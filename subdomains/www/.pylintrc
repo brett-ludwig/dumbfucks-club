@@ -1,0 +1,17 @@
+[MASTER]
+ignore=tests,venv,.git
+
+[FORMAT]
+max-line-length=88
+indent-string='    '
+
+[MESSAGES CONTROL]
+disable=
+    raw-checker-failed,
+    encoding-is-not-utf-8,
+    invalid-characters,
+    consider-using-with,
+    undefined-variable,
+    too-many-statements,
+    too-many-branches,
+    too-many-locals

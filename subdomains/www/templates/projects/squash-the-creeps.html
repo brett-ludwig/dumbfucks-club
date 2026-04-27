@@ -1,0 +1,44 @@
+{% from 'macros/main_macros.html' import navbar, border_box_css, drop_shadow_css with context%}
+
+
+{% extends 'macros/base.html' %}
+
+	{% block title %}
+		Godot Example Project
+	{% endblock %}
+
+
+
+	{% block content %}
+		<article id="top" class="wrapper style1">
+			<div class="container column-container outer-container bordered">
+				<h3>About this content</h3>
+				<p>
+					This page is was an exploration in making a custom landing page for exported games from the GODOT game engine. I like to tinker with game dev and this way I can make things accessible to friends
+					without requiring a download and the headache of compiling for multiple systems. Tha game itself is just a standard 3d tutorial you can find on Godot's website.
+				</p>
+			</div>
+		</article>
+
+		<section>
+			<div class="container centered-container">
+				<div id="game-div">
+					<canvas id="canvas"></canvas>
+					<noscript>
+						Your browser does not support JavaScript.
+					</noscript>
+					<div id="status">
+						<img id="status-splash" src="{{ url_for("static", path='assets/img/squash-the-creeps.png') }}" alt="">
+						<progress id="status-progress"></progress>
+						<div id="status-notice"></div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+
+		<!-- Scripts -->
+	  <script src="{{ url_for("static", path='assets/js/squash_the_creeps/squash-the-creeps.js') }}"></script>
+	  <script src="{{ url_for("static", path='assets/js/squash_the_creeps_init.js') }}"></script>
+  {% endblock %}

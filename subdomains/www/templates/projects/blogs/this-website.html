@@ -1,0 +1,52 @@
+{% from 'macros/main_macros.html' import navbar  with context%}
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>About this Website</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for("static", path='assets/css/main.css') }}" />
+		<link rel="stylesheet" href="{{ url_for("static", path='this-website/this-website.css') }}" />
+
+	</head>
+	<body class="is-preload">
+
+		{{ navbar() }}
+
+		<!-- Home -->
+		<article class="top">
+			<div class="margin-container">
+				<div class="column-container centered-container">
+					<p>This website's architecture at its most basic is shown below</p>
+					<img class="full-width" src="{{ url_for("static", path='assets/img/website-arch-ez.png') }}" alt="" />
+					<div class="bordered three-quarters-width">
+						<p>
+							I self host because it is fun.
+							<br>
+							Cloudflare protects my IP address and I get to save money on cloud hosting fees. In many use cases cloud is cheaper, but I have multiple docker containers for different subdomains. Add that to my desires to setup a database on the server and you can see how that would quickly become a pretty decent monthly bill for a website I host for fun.
+							<br><br>
+							This website runs on a python backend implemented with FastAPI.
+							<br>I use FastAPI because it was quick to get up and running an not because its particularly well suited for this kind of website.
+							<br><br>
+							The front end is almost entirely pure HTML and CSS.
+							<br>I use HTMX and vanilla JS here and there for some fun effects, but by in large I find most JS frameworks bloated. Your website does not need state management 9 times out of 10.
+							<br><br>
+							I bought my domain through Namecheap.com, there are plenty of other options though.
+							<br><br>
+
+							<a href="https://github.com/brett-ludwig/dumbfucks-club/tree/main">all code is publicly available on my github</a>
+						</p>
+					</div>
+
+				</div>
+			</div>
+
+
+
+
+		</article>
+
+
+	</body>
+</html>

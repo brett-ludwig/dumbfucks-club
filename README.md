@@ -20,4 +20,3 @@
 ## Running dnd
 1. get a timed url from foundryvtt for linux
 2. run `docker compose up --build -d`
-

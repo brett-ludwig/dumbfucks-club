@@ -1,0 +1,66 @@
+
+#chat-history {
+    overflow-y: scroll;
+    height: 60dvh;
+}
+
+
+.user {
+  background-color: #e5f2ff;
+  /* align-self: flex-start; */
+}
+
+.ai {
+  background-color: #fff;
+  /* align-self: flex-end; */
+}
+
+
+strong {
+  color: #4a90e2;
+}
+
+
+#message-input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  field-sizing: content;
+}
+
+
+#chat-form button {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#chat-form button:hover {
+  background-color: #3d7fe6;
+}
+
+/* New styles for highlighting selected message */
+.highlighted {
+  background-color: yellow; /* Change color to your preference */
+}
+
+/* Ensure that the highlight doesn't interfere with scrolling */
+#chat-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+#chat-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#chat-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+/* Add a delay to the highlight effect (optional) */
+.highlighted {
+  transition: background-color 0.3s ease-in-out;
+}

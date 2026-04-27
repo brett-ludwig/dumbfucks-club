@@ -1,0 +1,10 @@
+{% from 'macros/main_macros.html' import drop_shadow_css  with context%}
+
+<div class="p-2 {{drop_shadow_css()}}">
+    <strong>AI:</strong>
+    <p class="text-wrap">
+        {{response | safe}}
+    </p>
+</div>
+<div id="nextMessage" class="top-container">
+</div>
