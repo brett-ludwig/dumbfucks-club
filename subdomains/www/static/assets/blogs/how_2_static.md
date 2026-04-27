@@ -9,7 +9,7 @@ https://www.w3schools.com/css/default.asp
 https://www.w3schools.com/js/default.asp
 https://neocities.org/tutorials
 
-write the static site from scratch or use AI to help generate it. Either way get your files and remember to have fun! Not every website needs to look as vanilla as mine, they can be fun! 
+write the static site from scratch or use AI to help generate it. Either way get your files and remember to have fun! Not every website needs to look as vanilla as mine, they can be fun!
 
 
 ![[geocities.jpg]]

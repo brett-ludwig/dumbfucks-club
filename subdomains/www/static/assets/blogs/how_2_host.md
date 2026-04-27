@@ -22,7 +22,7 @@ Whether you want to make it all from scratch or use a website builder, its proba
 Your URL is your address for the website. Technically you can use your exposed ip address, but that's psychotic.
 
 ## Nameservers
-Some of the more technical among you might recognize this as the NS part of DNS. For those of you with a social life, DNS (Domain Name System) is what lets computers figure out the underlying ip address from a URL. 
+Some of the more technical among you might recognize this as the NS part of DNS. For those of you with a social life, DNS (Domain Name System) is what lets computers figure out the underlying ip address from a URL.
 
 Some of the options we'll discuss set this up for you, others don't.
 
@@ -59,5 +59,5 @@ ___
 1. Site Builders
 	1. I'm not making a blog about this. I haven't used once since I was in middle-school so what do I know.
 2. [[how_2_static]]
-3. [[how_2_cloud]] 
-4. [[how_2_home_server]] 
+3. [[how_2_cloud]]
+4. [[how_2_home_server]]

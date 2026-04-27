@@ -19,31 +19,29 @@
 	{% block content %}
   <article>
       <div id="chat-container" class="flex flex-col m-3  {{drop_shadow_css()}} ">
-    
+
         <div id="chat-history" class="block min-h-[30dvh] max-h-[60dvh] p-3 overflow-y-scroll">
           <div id="nextMessage" class="">
           </div>
         </div>
 
-        <form id="chat-form" 
-          hx-post="/ai/send-message" hx-target="#nextMessage" hx-swap="outerHTML" hx-include="#systemPrompt" 
+        <form id="chat-form"
+          hx-post="/ai/send-message" hx-target="#nextMessage" hx-swap="outerHTML" hx-include="#systemPrompt"
           class="flex flex-row mt-2 mx-2 {{border_box_css()}} grow min-h-[5dvh] ">
 
           <textarea class="m-1 grow-2" name="messageInput" placeholder="Type your message..." autocomplete="off" required>Submit your query!</textarea>
           <button class="mx-1 my-auto bg-cyan-100 h-10 w-fit" type="submit">Send</button>
         </form>
       </div>
-    
+
       <div id="system-prompt" class="flex flex-col h-9/10 px-4">
         <h2 class="text-2xl text-center mb-2">System Prompt</h2>
         {% autoescape on %}
         <textarea name="systemPrompt" id="systemPrompt" class="{{border_box_css()}} pb-0 grow">
-You are a junior developer. Your task is to create code for me to review as your senior developer. 
+You are a junior developer. Your task is to create code for me to review as your senior developer.
         </textarea>
         {% endautoescape %}
 
       </div>
 </article>
   {% endblock %}
-
-

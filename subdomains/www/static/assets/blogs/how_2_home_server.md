@@ -1,4 +1,4 @@
-Unlike [[how_2_cloud]] or [[how_2_static]] I intend to be pretty in depth here. I will be covering specifically how to setup a home server like mine. At times I will point out alternatives to what I use, but I will always provide the exact item I use and why. With that said, lets begin :) 
+Unlike [[how_2_cloud]] or [[how_2_static]] I intend to be pretty in depth here. I will be covering specifically how to setup a home server like mine. At times I will point out alternatives to what I use, but I will always provide the exact item I use and why. With that said, lets begin :)
 
 ## Why a Home Server?
 An important question. Why do all this when I can just use the cloud, is money really the big factor here?
@@ -34,14 +34,14 @@ Before we can setup our tunnels to connect us to the internet we need a URL in c
 If you buy from an external registrar still make a cloudflare account and go to the domains section. From here you can have Cloudflare attempt to scan for your DNS records automatically and connect it to their Nameservers
 
 ## Setup Cloudflare Tunnels
-So this is secret sauce. A fair question to have about a home server hosting a website is "Hey, isn't that really insecure to open your network like that?". By golly gee you are right! 
+So this is secret sauce. A fair question to have about a home server hosting a website is "Hey, isn't that really insecure to open your network like that?". By golly gee you are right!
 
-Especially when you don't know what you're doing this is not smart. People have bots that will try to hack your site no matter how insignificant. For example, here is a German bot that tried to use a React vuln to run code remotely on my server. (My website doesn't even use React, these bots just attempt known vulns blindly on URLs) 
+Especially when you don't know what you're doing this is not smart. People have bots that will try to hack your site no matter how insignificant. For example, here is a German bot that tried to use a React vuln to run code remotely on my server. (My website doesn't even use React, these bots just attempt known vulns blindly on URLs)
 ![[security-example.png]]
 
 As you can see, I use Cloudflare. Cloudflare is industry standard, has a fantastic free tier, and comes out the box able to block known threats like in the image above.
 
-Additionally it has a service called [Cloudflare Tunnels](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/). These allow you to run the tunnel program on your server **without exposing your public IP address**. Cloudflare acts as a gatekeeper. As shown above it will do some basic security checks and gives you insight into how many requests come to your site and from where. 
+Additionally it has a service called [Cloudflare Tunnels](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/). These allow you to run the tunnel program on your server **without exposing your public IP address**. Cloudflare acts as a gatekeeper. As shown above it will do some basic security checks and gives you insight into how many requests come to your site and from where.
 
 Using the cloudflare tunnel cli tool on your homeserver connect it to your cloudflare account. This should result in you having a Connector
 ![[cloudflare_tunnel_1.png]]
@@ -54,4 +54,3 @@ This isn't bullet proof security, but it has kept me safe so far (at least as fa
 ## Use your website
 
 At this point you should be live. Have fun!
-

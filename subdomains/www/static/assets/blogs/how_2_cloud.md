@@ -54,7 +54,7 @@ You either need a public IP address associated with your application or a load b
 
 Either way you need something with a public IP address (be it the load balancer or the Application's Virtual Machine). At this point people should be able to access your website if they type the public IP address into the URL bar
 
-## Name Server Setup 
+## Name Server Setup
 
 If you bought your URL on something like route53 in AWS or a similar service for other cloud providers you get this setup for your. You just need to connect the url in the cloud console
 
@@ -75,10 +75,10 @@ Note that this isn't www.dumbfucks.club A Records don't set that up. That is wha
 
 ![[real-architecture.png]]
 
-Above is how my website was hosted back when I was using GCP. 
+Above is how my website was hosted back when I was using GCP.
 
 I used the free tier Virtual Machine as a load balancer. NGINX was my reverse proxy, basically its making my own load balancer rather than using the actual cloud service.
 
-I used free cloud functions for hosting the HTTP part of my website and a Spot VM for a more resource intensive part of my website that wasn't always on. I have since moved away from this setup since It was overly complicated. 
+I used free cloud functions for hosting the HTTP part of my website and a Spot VM for a more resource intensive part of my website that wasn't always on. I have since moved away from this setup since It was overly complicated.
 
 **If you are going to go cloud I think you should be comfortable with a bill. My setup became complicated because I was trying to play within the lines of the free tier too much. I chose to move to home hosting, but cloud may be the better fit for you**

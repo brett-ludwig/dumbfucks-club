@@ -19,7 +19,7 @@ pre {
 }
 
 #top {
-	margin-top: 5dvh; 
+	margin-top: 5dvh;
 }
 
 #bottom {
@@ -38,7 +38,7 @@ pre {
 }
 
 .home-btn img {
-	height: 4rem; 
+	height: 4rem;
 	width: auto;
 }
 
@@ -48,13 +48,13 @@ pre {
 }
 
 #navbar li {
-	margin-right: 0.5dvw; 
+	margin-right: 0.5dvw;
 }
 
 #navbar a {
 	color: #fff;
 	text-decoration: none;
-	padding: 0.25dvh; 
+	padding: 0.25dvh;
 	transition: background-color 0.3s ease;
 }
 
@@ -131,7 +131,7 @@ textarea {
 	color: #000000;
 	box-shadow: inset 0px 2px 3px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(255, 255, 255, 0.025);
   }
-  
+
   input {
 	border: 0;
 	width: 100%;
@@ -142,8 +142,8 @@ textarea {
 
 .bordered {
 	border-radius: 1rem;
-	box-shadow: 
-				2dvw 2dvw 2dvw rgba(10, 10, 255, 0.11), 
+	box-shadow:
+				2dvw 2dvw 2dvw rgba(10, 10, 255, 0.11),
 				1dvw 1dvw 2dvw rgba(241, 113, 113, 0.11),
 		inset 	2dvw 2dvw 2dvw rgba(241, 113, 113, 0.11);
 	padding: 1dvh 1dvw;

@@ -1,6 +1,6 @@
 const GODOT_CONFIG = {"args":[],"canvasResizePolicy":1,"ensureCrossOriginIsolationHeaders":true,"executable":"squash-the-creeps","experimentalVK":false,"fileSizes":{"squash-the-creeps.pck":1746304,"squash-the-creeps.wasm":43016933},"focusCanvas":true,"gdextensionLibs":[]};
 const GODOT_THREADS_ENABLED = false;
-const engine = new Engine(GODOT_CONFIG);					
+const engine = new Engine(GODOT_CONFIG);
 
 (function () {
   const statusOverlay = document.getElementById('status');

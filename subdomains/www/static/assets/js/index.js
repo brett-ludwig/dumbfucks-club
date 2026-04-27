@@ -10,6 +10,6 @@ function updateCypress() {
     cypress.setAttribute("src", src);
     cypress.setAttribute("keyframe", keyframe);
   }
-  
+
   // Call the function every 2000ms (2 seconds)
   let intervalId = setInterval(updateCypress, 250);

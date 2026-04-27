@@ -1,11 +1,11 @@
 #game-div {
   width: 720px;
-  height:  540px; 
+  height:  540px;
 }
 
 #game-div canvas {
   width: 720px !important;
-  height:  540px !important; 
+  height:  540px !important;
 }
 
 #status {
@@ -15,7 +15,7 @@
 
 #status img {
   width: 720px;
-  height: 540px; 
+  height: 540px;
 }
 
 #status-progress {
