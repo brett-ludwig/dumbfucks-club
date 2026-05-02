@@ -1,29 +1,56 @@
 <!DOCTYPE html>
-{% from 'macros/main_macros.html' import navbar with context%}
-<html lang="en">
+{% from 'macros/main_macros.html' import navbar with context %}
+<html lang="{{ config.lang | default('en', true) }}">
 <head>
-<!--  blocks in this template are... head, title, content  !-->
-<title>{% block title %}{% endblock %}</title>
-{% block head %}
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags for accessibility and SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <link href="{{ url_for('static', path='assets/css/tailwind.css') }}" rel="stylesheet">
-{% endblock %}
+    <!-- Title block -->
+    <title>{% block title %}{{ config.app_title | default('Dumbfucks Club', true) }}{% endblock %}</title>
+
+    <!-- SEO and social meta tags -->
+    <meta name="description" content="{{ page_meta.description | default('', true) }}">
+    <meta property="og:title" content="{{ config.app_title | default('Dumbfucks Club', true) }}">
+    <meta property="og:description" content="{{ page_meta.description | default('', true) }}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="robots" content="index, follow">
+
+    {% block head %}
+    <!-- Custom head content -->
+    {% endblock %}
 </head>
-<body>
 
+<body class="font-sans antialiased">
+    <!-- Main layout container -->
     <div class="flex flex-col min-h-screen">
-        {{ navbar() }}
+        <!-- Navbar block -->
+        <header>
+            {{ navbar() }}
+        </header>
+
+        <!-- Content block -->
         <main class="flex-grow mx-auto px-4 py-8 max-w-3xl">
             {% block content %}
             {% endblock %}
         </main>
 
-        <!-- Contact -->
-        <footer>
-            <li>&copy; Brett Ludwig. All rights reserved.</li>
+        <!-- Footer block -->
+        <footer class="bg-gray-800 text-white mt-auto">
+            <div class="max-w-7xl mx-auto px-4 py-8">
+                {% block footer_content %}
+                <div class="text-center">
+                    <p>&copy; {{ "now" | date("%Y") }} {{ config.app_name | default('Dumbfucks Club', true) }}. All rights reserved.</p>
+                </div>
+                {% endblock %}
+            </div>
         </footer>
     </div>
+
+    {% block scripts %}
+    <!-- Custom scripts -->
+    {% endblock %}
 </body>
 </html>
